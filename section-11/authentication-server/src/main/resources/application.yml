@@ -1,0 +1,23 @@
+server:
+  port: 65530
+
+## ===>>>>> CONNECTION DETAILS <<<<===
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost;databaseName=spring_in_action_db
+    #Credentials
+    #    username: sa
+    username: spring
+    password: spring2##@
+    #Connection Driver
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+    # load scripts
+    # ignore error loading script
+  sql:
+    init:
+      mode: never
+      continue-on-error: false
+  jpa:
+    hibernate:
+      ddl-auto: update

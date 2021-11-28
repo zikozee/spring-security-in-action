@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/section-11/authentication-server/authentication-server.iml" filepath="$PROJECT_DIR$/section-11/authentication-server/authentication-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/section-11/business-logic-server/business-logic-server.iml" filepath="$PROJECT_DIR$/section-11/business-logic-server/business-logic-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/section-9/filters/filters.iml" filepath="$PROJECT_DIR$/section-9/filters/filters.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/spring-in-action.iml" filepath="$PROJECT_DIR$/.idea/spring-in-action.iml" />
+    </modules>
+  </component>
+</project>

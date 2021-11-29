@@ -3,47 +3,47 @@
   <component name="issues">
     <option name="index">
       <map>
-        <entry key="$PROJECT_DIR$/section-9/filters/README.md">
+        <entry key="/a.dummy">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/section-9/filters/src/main/java/com/zikozee/filters/config/ProjectConfig.java">
+        <entry key="$PROJECT_DIR$/section-2/hello-spring-security/README.md">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/section-9/filters/src/main/java/com/zikozee/filters/controller/HelloController.java">
+        <entry key="$PROJECT_DIR$/section-2/hello-spring-security/src/main/java/com/zikozee/security/AuthProvider/AuthenticationProvider.java">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/section-9/filters/src/main/java/com/zikozee/filters/filter/AuthLoggingFilter.java">
+        <entry key="$PROJECT_DIR$/section-2/hello-spring-security/src/main/java/com/zikozee/security/authprovider/AuthenticationProvider.java">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/section-9/filters/src/main/java/com/zikozee/filters/filter/RequestValidationFilter.java">
+        <entry key="$PROJECT_DIR$/section-2/hello-spring-security/src/main/java/com/zikozee/security/authprovider/CustomAuthenticationProvider.java">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/section-9/filters/src/main/java/com/zikozee/filters/filter/StaticKeyAuthentication.java">
+        <entry key="$PROJECT_DIR$/section-2/hello-spring-security/src/main/java/com/zikozee/security/authprovider/UserManagementConfig.java">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/section-9/filters/src/main/java/com/zikozee/filters/filter/StaticKeyAuthenticationFilter.java">
+        <entry key="$PROJECT_DIR$/section-2/hello-spring-security/src/main/java/com/zikozee/security/config/ProjectConfig.java">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/section-9/filters/src/main/resources/application.properties">
+        <entry key="$PROJECT_DIR$/section-2/hello-spring-security/src/main/java/com/zikozee/security/config/UserManagementConfig.java">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/section-9/filters/src/main/resources/application.yml">
+        <entry key="$PROJECT_DIR$/section-2/hello-spring-security/src/main/java/com/zikozee/security/controller/Test.java">
           <value>
             <set />
           </value>

@@ -1,0 +1,1 @@
+remove scope test from unboundid-ldapsdk to make it work in pom.xml

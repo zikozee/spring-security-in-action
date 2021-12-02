@@ -1,0 +1,21 @@
+
+## ===>>>>> CONNECTION DETAILS <<<<===
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/spring
+    #Credentials
+    #    username: sa
+    username: root
+    password: jagaban##
+    #Connection Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+    # load scripts
+    # ignore error loading script
+  sql:
+    init:
+      mode: always
+      continue-on-error: false
+  jpa:
+    hibernate:
+      ddl-auto: create-drop

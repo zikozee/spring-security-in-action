@@ -1,4 +1,4 @@
-package com.zikozee.userdetailsservice;
+package com.zikozee.userdetails;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

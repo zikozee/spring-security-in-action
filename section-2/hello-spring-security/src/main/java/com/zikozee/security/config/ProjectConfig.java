@@ -41,7 +41,7 @@ public class ProjectConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(customAuthenticationProvider);
 
-//        var userDetailsService =
+//        var userDetailsServUice =
 //                new InMemoryUserDetailsManager();
 //
 //        var user = User.withUsername("john")

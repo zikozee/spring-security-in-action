@@ -2,15 +2,10 @@ package com.zikozee.security.config;
 
 import com.zikozee.security.authprovider.CustomAuthenticationProvider;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cglib.proxy.NoOp;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 /**
  * @author : Ezekiel Eromosei

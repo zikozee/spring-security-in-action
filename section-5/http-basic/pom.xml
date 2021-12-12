@@ -6,13 +6,16 @@
         <groupId>com.zikozee</groupId>
         <artifactId>sample-multi-module</artifactId>
         <version>1.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>implementing-authentication</artifactId>
-    <name>implementing-authentication</name>
-    <description>implementing-authentication</description>
+    <artifactId>http-basic</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>http-basic</name>
+    <description>http-basic</description>
     <properties>
         <java.version>11</java.version>
     </properties>
+
     <dependencies>
 
     </dependencies>

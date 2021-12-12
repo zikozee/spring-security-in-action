@@ -7,15 +7,16 @@
         <artifactId>sample-multi-module</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>implementing-authentication</artifactId>
-    <name>implementing-authentication</name>
-    <description>implementing-authentication</description>
+    <artifactId>form-based-login</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>form-based-login</name>
+    <description>form-based-login</description>
     <properties>
         <java.version>11</java.version>
     </properties>
+
     <dependencies>
 
     </dependencies>
-
 
 </project>

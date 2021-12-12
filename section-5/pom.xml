@@ -57,6 +57,8 @@
     <modules>
         <module>implementing-authentication</module>
         <module>security-context</module>
+        <module>http-basic</module>
+        <module>form-based-login</module>
     </modules>
 
     <build>

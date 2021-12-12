@@ -6,13 +6,16 @@
         <groupId>com.zikozee</groupId>
         <artifactId>sample-multi-module</artifactId>
         <version>1.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>implementing-authentication</artifactId>
-    <name>implementing-authentication</name>
-    <description>implementing-authentication</description>
+    <artifactId>SecurityContext</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>SecurityContext</name>
+    <description>SecurityContext</description>
     <properties>
         <java.version>11</java.version>
     </properties>
+
     <dependencies>
 
     </dependencies>
@@ -22,14 +25,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
             </plugin>
         </plugins>
     </build>

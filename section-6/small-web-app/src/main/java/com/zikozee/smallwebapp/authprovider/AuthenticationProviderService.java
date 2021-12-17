@@ -12,6 +12,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.scrypt.SCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 
 
 /**
@@ -19,12 +20,13 @@ import org.springframework.security.crypto.scrypt.SCryptPasswordEncoder;
  * @created : 17 Dec, 2021
  */
 
-@AllArgsConstructor
+@Service
+@RequiredArgsConstructor
 public class AuthenticationProviderService implements AuthenticationProvider {
 
-    private JpaUserDetailsService userDetailsService;
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
-    private SCryptPasswordEncoder sCryptPasswordEncoder;
+    private final JpaUserDetailsService userDetailsService;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final SCryptPasswordEncoder sCryptPasswordEncoder;
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {

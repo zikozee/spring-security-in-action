@@ -20,17 +20,8 @@ import org.springframework.security.crypto.scrypt.SCryptPasswordEncoder;
 @RequiredArgsConstructor
 public class ProjectConfig extends WebSecurityConfigurerAdapter {
 
-    private final JpaUserDetailsService userDetailsService;
+    private final AuthenticationProviderService authenticationProvider;
 
-    @Bean
-    public BCryptPasswordEncoder bCryptPasswordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public SCryptPasswordEncoder sCryptPasswordEncoder(){
-        return new SCryptPasswordEncoder();
-    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -45,6 +36,6 @@ public class ProjectConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(new AuthenticationProviderService(userDetailsService, bCryptPasswordEncoder(), sCryptPasswordEncoder()));
+        auth.authenticationProvider(authenticationProvider);
     }
 }

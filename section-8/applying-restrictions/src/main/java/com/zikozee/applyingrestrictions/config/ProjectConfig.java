@@ -53,6 +53,6 @@ public class ProjectConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .mvcMatchers("/hello").hasRole("ADMIN")
                 .mvcMatchers("/ciao").hasRole("MANAGER")
-                .anyRequest().permitAll(); // permits all others
+                .anyRequest().permitAll(); // permits all others:::: we could use .authenticated() to only allow authenticated users only to access
     }
 }

@@ -8,6 +8,8 @@
 - however, if you provide credentials, spring will authenticate it first before accessing the endpoint
 - remember it is **Authentication Filter** before **Authorization Filter** 
 - hence, its stops at Authentication Filter if credentials is invalid
+- permits all others:::: we could use .authenticated() to only allow authenticated users only to access
+
 
 ### URLS USED
 - curl -v -u john:12345 http://localhost:8080/hello

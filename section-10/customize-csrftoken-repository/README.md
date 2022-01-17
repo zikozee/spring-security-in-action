@@ -18,15 +18,15 @@
 
 
 ## OBTAINING AND USING THE CSRF TOKEN
-- assuming user's unique identifier is UNIUE-123
+- assuming user's unique identifier is UNIQUE-123
 - we use the GET /hello
-- curl -vH "X-IDENTIFIER:UNQUE-123"  http://localhost:8080/hello
+- curl -vH "X-IDENTIFIER:UNIQUE-123"  http://localhost:8080/hello
 - check token table
 
 - using csrf token
-- curl -XPOST -H "X-IDENTIFIER:UNQUE-123"  -H "X-CSRF-TOKEN:<TOKEN_GENERATED>"  http://localhost:8080/hello
+- curl -X POST -H "X-IDENTIFIER:UNIQUE-123"  -H "X-CSRF-TOKEN:<TOKEN_GENERATED>"  http://localhost:8080/hello
 
 ## IMPLEMENTING CORS THAT EXPIRE
 - create a csrf token that has expiration time embedded in it: say time changed to base64 + uuid
-- on every request, check csrf token and evaluate time if expired refuse and throw Anuthentication exception
+- on every request, check csrf token and evaluate time if expired refuse and throw Authentication exception
 

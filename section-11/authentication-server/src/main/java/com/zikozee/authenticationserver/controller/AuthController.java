@@ -33,7 +33,9 @@ public class AuthController {
 
     @PostMapping(path = "otp/check")
     public void check(@RequestBody Otp otp, HttpServletResponse response){
-        if(userService.check(otp)) response.setStatus(HttpServletResponse.SC_OK);
-        else response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+        if(userService.check(otp))
+            response.setStatus(HttpServletResponse.SC_OK);
+        else
+            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
     }
 }

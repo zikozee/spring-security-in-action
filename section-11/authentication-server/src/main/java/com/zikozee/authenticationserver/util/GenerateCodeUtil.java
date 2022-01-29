@@ -18,7 +18,7 @@ public class GenerateCodeUtil {
         try{
             SecureRandom random = SecureRandom.getInstanceStrong();
 
-            int c = random.nextInt(9000) + 1000;
+            int c = random.nextInt(900000) + 100000;
 
             code = String.valueOf(c);
         }catch (NoSuchAlgorithmException ex){

@@ -8,9 +8,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.Optional;
 
 import static com.zikozee.authenticationserver.util.GenerateCodeUtil.generateCode;
+import static com.zikozee.authenticationserver.util.GenerateCodeUtil.generateUserKey;
 
 /**
  * @author : Ezekiel Eromosei
@@ -28,6 +30,7 @@ public class UserService {
 
     public void addUser(User user){
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setUserKey(generateUserKey());
         userRepository.save(user);
     }
 
@@ -72,4 +75,15 @@ public class UserService {
         return false;
     }
 
+    public String getUserKey(UserKeyDto userKeyDto){
+        Optional<User> optionalUser =
+                userRepository.getUserByUsername(userKeyDto.getUsername());
+
+        User user = optionalUser.orElseThrow(() -> new EntityNotFoundException("User with username '" + userKeyDto.getUsername()+"' not found"));
+
+        return user.getUserKey();
+
+    }
+
+    //expose ADMIN ENDPOINT TO REGENERATE KEY USED for SIGNING JWT
 }

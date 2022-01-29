@@ -1,5 +1,5 @@
 server:
-  port: 65530
+  port: 8080
 
 ## ===>>>>> CONNECTION DETAILS <<<<===
 spring:

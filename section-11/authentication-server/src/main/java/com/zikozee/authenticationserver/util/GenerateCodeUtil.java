@@ -1,5 +1,10 @@
 package com.zikozee.authenticationserver.util;
 
+import org.springframework.http.HttpHeaders;
+import org.springframework.security.crypto.keygen.KeyGenerators;
+import org.springframework.security.crypto.keygen.StringKeyGenerator;
+
+import javax.servlet.http.HttpServletRequest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
@@ -26,5 +31,11 @@ public class GenerateCodeUtil {
         }
 
         return code;
+    }
+
+    public static String generateUserKey(){
+        // you could also encrypt key
+        StringKeyGenerator keyGen = KeyGenerators.string();
+        return keyGen.generateKey();
     }
 }

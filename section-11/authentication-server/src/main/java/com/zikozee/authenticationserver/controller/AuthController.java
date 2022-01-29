@@ -2,6 +2,7 @@ package com.zikozee.authenticationserver.controller;
 
 import com.zikozee.authenticationserver.domain.otp.Otp;
 import com.zikozee.authenticationserver.domain.user.User;
+import com.zikozee.authenticationserver.domain.user.UserKeyDto;
 import com.zikozee.authenticationserver.domain.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,5 +38,10 @@ public class AuthController {
             response.setStatus(HttpServletResponse.SC_OK);
         else
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+    }
+
+    @PostMapping(path = "user/key")
+    public String fetchUserKey(@RequestBody UserKeyDto userKeyDto){
+        return userService.getUserKey(userKeyDto);
     }
 }

@@ -1,5 +1,6 @@
 package com.zikozee.authenticationserver.domain.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -24,6 +25,8 @@ public class User {
     @Id
     private String username;
     private String password;
+    @JsonIgnore
+    private String userKey;
 
     @Override
     public boolean equals(Object o) {

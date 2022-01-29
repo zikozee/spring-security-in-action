@@ -18,3 +18,6 @@
 ## NOTE NOTE
 - ask yourself when using AuthenticationProvider and UserDetailsService in the AuthenticationManagerBuilder
 - is this the right implementation
+
+- curl -u john:12345 http://localhost:8080/hello   :: 200
+- curl -u john:1234 http://localhost:8080/hello    :: 401

@@ -1,10 +1,10 @@
 package com.zikozee.businesslogic.config;
 
+import com.zikozee.businesslogic.BusinessLogicServerApplication;
 import com.zikozee.businesslogic.authfilter.InitialAuthenticationFilter;
 import com.zikozee.businesslogic.authfilter.JwtAuthenticationFilter;
 import com.zikozee.businesslogic.authprovider.OtpAuthenticationProvider;
 import com.zikozee.businesslogic.authprovider.UsernamePasswordAuthenticationProvider;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,12 +21,17 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
  */
 
 @Configuration
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final JwtAuthenticationFilter jwtAuthenticationFilter;
-    private final UsernamePasswordAuthenticationProvider usernamePasswordAuthenticationProvider;
-    private final OtpAuthenticationProvider otpAuthenticationProvider;
+    final JwtAuthenticationFilter jwtAuthenticationFilter = BusinessLogicServerApplication.getContext().getBean("jwtAuthenticationFilter", JwtAuthenticationFilter.class);
+    final UsernamePasswordAuthenticationProvider usernamePasswordAuthenticationProvider=  BusinessLogicServerApplication.getContext().getBean("usernamePasswordAuthenticationProvider", UsernamePasswordAuthenticationProvider.class);
+    final OtpAuthenticationProvider otpAuthenticationProvider =   BusinessLogicServerApplication.getContext().getBean("otpAuthenticationProvider", OtpAuthenticationProvider.class);
+
+
+//    private final JwtAuthenticationFilter jwtAuthenticationFilter;
+//    private final UsernamePasswordAuthenticationProvider usernamePasswordAuthenticationProvider;
+//    private final OtpAuthenticationProvider otpAuthenticationProvider;
 
     @Value("${jwt.base.signing.key}")
     private String baseSigningKey;

@@ -8,6 +8,7 @@ import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -53,7 +54,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String username = String.valueOf(claims.get("username"));
 
         GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("user");
-        var auth = new UsernamePasswordAuthentication(username, null, List.of(grantedAuthority));
+        var auth = new UsernamePasswordAuthenticationToken(username, null, List.of(grantedAuthority));
 
         SecurityContextHolder.getContext().setAuthentication(auth);
 

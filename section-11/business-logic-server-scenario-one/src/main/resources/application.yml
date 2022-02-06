@@ -1,0 +1,12 @@
+server:
+  port: 9090
+
+auth:
+  server:
+    base:
+      url: http://localhost:8080
+
+jwt:
+  base:
+    signing:
+      key: bizlogicserverkeybizlogicserverkeybizlogicserverkeybizlogicserverkeybizlogicserverkeybizlogicserverkey

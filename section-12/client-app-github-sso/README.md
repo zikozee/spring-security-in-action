@@ -9,7 +9,7 @@
 ### CLIENT REGISTRATION
 
 - All Oauth 2 follow the same standard. so you must provide the following details for **client registration**
-- below is githubs details found in : **https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/**
+- below is GitHub's details found in : **https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/**
 - ```java
     ClientRegistration cr = ClientRegistration
     .withRegistrationId("github")  :: USER DEFINED

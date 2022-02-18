@@ -16,11 +16,49 @@
 ### TESTING PASSWORD GRANT
 - ```
   curl --location --request POST 'http://localhost:8080/oauth/token?grant_type=password&username=john&password=12345&scope=read' \
-   --header 'Authorization: Basic Y2xpZW50OnNlY3JldA==' | json_pp
+   --header 'Authorization: Basic Y2xpZW50MTpzZWNyZXQx' | json_pp
   
   OR
   
-   curl -v --header 'Authorization:Basic Y2xpZW50OnNlY3JldA==' -XPOST  \
+   curl -v --header 'Authorization:Basic Y2xpZW50MTpzZWNyZXQx' -XPOST  \
   'http://localhost:8080/oauth/token?grant_type=password&username=john&password=12345&scope=read' | json_pp
 
   ```
+  
+### BEST PRACTICE
+- Each client should have its own clientId and ClientSecret:: **DO NOT SHARE**
+- each client should have its grant saved alongside its credentials e.g a column for grant_type
+
+
+
+### AUTHORIZATION GRANT TYPE
+- we provide the redirected URI : where the user will be redirected to after successful login with the authorization code appended
+- Also, we **Override HttpSecurity to provide form login** where user will be redirected to in order to provide credentials
+
+### TESTING AUTHORIZATION CODE
+- http://localhost:8080/oauth/authorize?response_type=code&client_id=client2&scope=read
+- input user details configured :: john:12345
+- Authorization ask you to confirm the **scopes** you want to authorize
+- the Authorization Server redirects you to the provided RedirectedURI for the client with the code appended
+#### Obtaining token after the above steps
+- ```java
+  curl -v --header 'Authorization:Basic Y2xpZW50MjpzZWNyZXQy' \
+   -XPOST  http://localhost:8080/oauth/token?grant_type=authorization_code&scope=read&code=<CODE_GENERATED>
+  ```
+- NOTE CODE CAN ONLY BE USED ONCE else we get
+```json
+    {
+        "error": "invalid_grant",
+        "error_description": "Invalid authorization code: 3uRFne"
+        }
+```
+
+### CLIENT CREDENTIALS GRANT TYPE
+- curl -v --header 'Authorization: Basic Y2xpZW50MzpzZWNyZXQz' -XPOST 'http://localhost:8080/oauth/token?grant_type=client_credentials&scope=info'
+
+
+### REFRESH TOKEN GRANT TYPE
+- to support refresh token you must add it to the list of grant provided, else it will not be included
+- i.e List.of("authorization_code", "refresh_token)
+- i.e List.of("password", "refresh_token)
+- Best Used to reduce signing in with **username and password for authorization_code and password grant**   

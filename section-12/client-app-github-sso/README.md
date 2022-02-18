@@ -26,15 +26,15 @@
     .build();
   ```
 
-- Spring provies a simpler impl for common oauth providers: **Google, github, facebook, Okta**
-- namely **CommonOAuth2Provider**  which defaults the above implementation to last known provider value
+- Spring provides a simpler impl for common oauth providers: **Google, github, facebook, Okta**
+- namely: **CommonOAuth2Provider**  which defaults the above implementation to last known provider value
 
 
 ### CLIENT REPOSITORY
 - The oauth authentication filter obtains details about the authorization server client registrations from
 - a **ClientRegistrationRepository**
 
-- ClientRegistraionRepository has one or more ClientRegistration Objects (e.g GITHUB, FACEBOOK, LINKEDIN etc)
+- ClientRegistrationRepository has one or more ClientRegistration Objects (e.g GITHUB, FACEBOOK, LINKEDIN etc)
 
 - This can be configured via code (inline or declarative) or via application ppties
 

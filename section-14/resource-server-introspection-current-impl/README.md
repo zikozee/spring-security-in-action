@@ -10,3 +10,5 @@
         </dependency>
 
   ```
+  
+- endpoint works as the DIRECT_CALL RESOURCE-SERVER

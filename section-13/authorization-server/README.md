@@ -13,6 +13,12 @@
 - Also we have **JdbcClientDetailsService** for clients as JdbcUserDetailsService fo users for connecting to the database
 
 
+### VALIDATING TOKEN FROM RESOURCE SERVER
+- we override **configure(AuthorizationServerSecurityConfigurer security)** in the AuthServerConfig class
+- we then specify **security.checkTokenAccess("isAuthenticated()")** or **security.checkTokenAccess("permitAll()");**
+- but it is recommended to use the first
+
+
 ### TESTING PASSWORD GRANT
 - ```
   curl --location --request POST 'http://localhost:8080/oauth/token?grant_type=password&username=john&password=12345&scope=read' \

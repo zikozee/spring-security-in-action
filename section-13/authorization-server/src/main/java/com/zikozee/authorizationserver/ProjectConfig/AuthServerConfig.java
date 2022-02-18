@@ -8,6 +8,7 @@ import org.springframework.security.oauth2.config.annotation.configurers.ClientD
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.client.BaseClientDetails;
 import org.springframework.security.oauth2.provider.client.InMemoryClientDetailsService;
 
@@ -65,7 +66,15 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
         cd3.setAuthorizedGrantTypes(List.of(CLIENT_CREDENTIALS));
 
 
-        service.setClientDetailsStore(Map.of("client1", cd,"client2", cd2, "client3", cd3));
+        // todo info: configuring resource server
+        //  note authorization server sees resource server as a client
+
+        var cdResourceServer= new BaseClientDetails();
+        cdResourceServer.setClientId("resource-server");
+        cdResourceServer.setClientSecret("resource-server-secret");
+
+
+        service.setClientDetailsStore(Map.of("client1", cd,"client2", cd2, "client3", cd3, "resource-server", cdResourceServer));
         clients.withClientDetails(service);
 
         //todo info: shorter implementation use above for DATABASE connection
@@ -89,6 +98,16 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 //                .withClient("client3")
 //                .secret("secret3")
 //                .authorizedGrantTypes(AUTHORIZATION_CODE_GRANT, PASSWORD_GRANT, REFRESH_TOKEN)
-//                .scopes("info");
+//                .scopes("info")
+//                .and()
+//                .withClient("resourceserver")
+//                .secret("resourceserversecret");
+    }
+
+
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+        security.checkTokenAccess("isAuthenticated()")
+                .allowFormAuthenticationForClients();
     }
 }

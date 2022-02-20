@@ -1,4 +1,4 @@
-package com.zikozee.authorizationserver.configuration;
+package com.zikozee.authorizationserver.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -44,7 +44,10 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
                 .withClient("client1")
                 .secret("secret1")
                 .authorizedGrantTypes("password", "refresh_token")
-                .scopes("read");
+                .scopes("read")
+                .and()
+                .withClient("resource-server")
+                .secret("resource-server-secret");
     }
 
     @Override
@@ -68,5 +71,11 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 
         converter.setKeyPair(keyStoreKeyFactory.getKeyPair(alias));
         return converter;
+    }
+
+    // for token validation
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+        security.tokenKeyAccess("isAuthenticated()");//oauth/token_key   :: getting public key to be used by resourceserver
     }
 }

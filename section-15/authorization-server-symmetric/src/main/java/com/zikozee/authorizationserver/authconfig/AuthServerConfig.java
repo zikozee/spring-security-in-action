@@ -32,6 +32,7 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+        //todo not recommended for loading db clients
         clients.inMemory()
                 .withClient("client1")
                 .secret("secret1")

@@ -85,10 +85,4 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
         converter.setKeyPair(keyStoreKeyFactory.getKeyPair(alias));
         return converter;
     }
-
-    // for token validation
-    @Override
-    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        security.tokenKeyAccess("isAuthenticated()");//oauth/token_key   :: getting public key to be used by resourceserver
-    }
 }

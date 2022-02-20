@@ -1,0 +1,5 @@
+server:
+  port: 9090
+
+jwt:
+  key: MjWP5L7CiDMjWP5L7CiDMjWP5L7CiDMjWP5L7CiDMjWP5L7CiD

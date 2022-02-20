@@ -1,0 +1,12 @@
+server:
+  port: 9090
+
+publicKey: -----BEGIN PUBLIC KEY-----
+  MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApyiuouRR3HAvp9m3F9h8
+  wFHrA0xw05sJrj2bGb6XZoKpg3ByyQ1bRhlwhY4Zk9owNnEW9iiAFFyEdAyewTac
+  62kfuGaJXo3os+OFU8woYynUtyQm5rHlWrkESl3L52WtnBl+pz4cvq01Cnufv0JR
+  4ryDvqbNfylMeSQRtTKwJ2zaqpYdU6wJxt/Smy/OxAvQlsYzOMYfwQ6fZbhkcJ2Q
+  VXoLTx6rpG0TvlFswyEuwSpeDV3L82JPQpIN3ZTqUQBcc2NyC0ywgSwTw/go1hyM
+  9TRRdDn9BbBWxI9nKjXMyeQmKhvvodn9xG66RXis+QCNXbedeY0neledFs6dVLYm
+  XwIDAQAB
+  -----END PUBLIC KEY-----

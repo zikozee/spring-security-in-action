@@ -1,4 +1,6 @@
 ## PREPOST AUTHORIZATION
+- Also known as call authorization
+- use for method security
 
 - @EnableGlobalMethodSecurity(prePostEnabled = true)
 - @PreAuthorize("hasAuthority('<AUTHORITY>')")
@@ -53,6 +55,7 @@
 - curl -u emma:12345 http://localhost:8080/documents/pre/asd555 | json_pp
 - curl -u emma:12345 http://localhost:8080/documents/pre/abc123 | json_pp
 
+#### POST-AUTHORIZE
 - curl -u natalie:12345 http://localhost:8080/documents/abc123  | json_pp
 - curl -u natalie:12345 http://localhost:8080/documents/asd555 | json_pp
 - curl -u emma:12345 http://localhost:8080/documents/asd555 | json_pp

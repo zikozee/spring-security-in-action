@@ -22,16 +22,22 @@ public class ProductController {
 
     @GetMapping(path = "sell")
     public List<Product> sellProduct(){
-        List<Product> products =
-                List.of(new Product("beer", "nikolai"),
-                        new Product("candy", "nikolai"),
-                        new Product("chocolate", "julien"));
+//        List<Product> products =
+//                List.of(new Product("beer", "nikolai"),
+//                        new Product("candy", "nikolai"),
+//                        new Product("chocolate", "julien"));
 
-//        List<Product> products = new ArrayList<>();
-//        products.add(new Product("beer", "nikolai"));
-//        products.add(new Product("candy", "nikolai"));
-//        products.add(new Product("chocolate", "julien"));
+        List<Product> products = new ArrayList<>();
+        products.add(new Product("beer", "nikolai"));
+        products.add(new Product("candy", "nikolai"));
+        products.add(new Product("chocolate", "julien"));
         return productService.sellProducts(products);
+
+    }
+
+    @GetMapping(path = "find")
+    public List<Product> findProducts(){
+        return productService.getProducts();
 
     }
 

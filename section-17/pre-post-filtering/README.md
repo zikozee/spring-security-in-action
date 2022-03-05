@@ -31,3 +31,12 @@
     "path": "/sell"
     }
   ```
+
+## POST-FILTERING
+- Unlike **pre-filtering*, post-filtering throws an exception to the caller when the returned value doesn't
+- follow the authorization rule
+- it must be used on a method returning a collection
+
+## TEST
+- curl -u 'nikolai:12345' http://localhost:8080/find | json_pp
+- curl -u 'julien:12345' http://localhost:8080/find | json_pp

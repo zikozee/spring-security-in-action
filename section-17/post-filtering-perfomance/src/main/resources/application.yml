@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/spring_prepost
+    username: root
+    password: jagaban##
+  sql:
+    init:
+      mode: always
+

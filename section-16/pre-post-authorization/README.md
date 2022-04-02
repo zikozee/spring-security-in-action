@@ -47,8 +47,8 @@
 - for the first best suited for **PostAuthorize** which has a return Object 
 - **@PostAuthorize("hasPermission(returnObject, '<ROLE OR AUTHORITY>')")**
 - the second best suited for **PreAuthorize** using the uniqueId 
-- **@PostAuthorize("hasPermission(#uniqueId, 'ROLE or AUTHORITY')")**
-- see @DocumentPermissionEvaluator for details
+- **@PreAuthorize("hasPermission(#uniqueId, 'ROLE or AUTHORITY')")**
+- see @DocumentPermissionEvaluator and DocumentService for details
 
 ### TESTING COMPLEX SCENARIO
 #### PRE-AUTHORIZE

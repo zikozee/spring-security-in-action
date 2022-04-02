@@ -21,6 +21,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author : Ezekiel Eromosei
@@ -51,6 +52,8 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
                 .secret("secret1")
                 .authorizedGrantTypes("password", "refresh_token")
                 .scopes("read")
+                .accessTokenValiditySeconds((int)TimeUnit.MINUTES.toSeconds(30))
+                .refreshTokenValiditySeconds((int)TimeUnit.HOURS.toSeconds(2))
                 .and()
                 .withClient("resource-server")
                 .secret("resource-server-secret");

@@ -1,0 +1,5 @@
+server:
+  port: 9090
+
+jwk:
+  endpoint: http://localhost:8180/auth/realms/SpringSecurityInAction/protocol/openid-connect/certs

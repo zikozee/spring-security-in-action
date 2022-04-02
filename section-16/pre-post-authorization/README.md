@@ -39,6 +39,8 @@
         boolean hasPermission(Authentication authentication, Serializable targetId, String targetType, Object permission)  
   ```
   
+- FOR REACTIVE VERSION SEE [section-19 reactive-app-auth-access]
+  
 ### USE CASES
 - NOTE: Authentication is injected by spring so no need to provide it
 - 

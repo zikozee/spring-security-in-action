@@ -21,7 +21,7 @@
 - only advisable for standalone applications
 - more so, it is not threadsafe synchronization needs be handled
 
-## UNIT TEST
+## UNIT TEST  -- see also ch2, ch 16
 - @WithMockUser(username = "mary")  : skips authentication and configures fake user as mary
 - RequestProcessor:   with(requestProcessor)  e.g with(user(...)) :: ctrl user to see
 ###DIFF  BTW ANNOTATION AND REQUEST_PROCESSOR

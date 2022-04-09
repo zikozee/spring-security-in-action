@@ -23,7 +23,12 @@
 - It receives the request from the AuthenticationManager and delegates finding the user to a UserDetailsSerService, 
 - and verifying the password to a PasswordEncoder.
 
-# UNIT TEST
+### UNIT TEST
 - **@WithMockUser**  skips authentication: assumes fake user is already authenticated
 - **@WithUserDetails** requires a bean of userdetails service in the spring context, i enforced this 
 - by defining the optional **userDetailsServiceBeanName**
+
+### USING CUSTOM SECURITY CONTEXT
+- create a custom annotation we would use say @WithCustomUser
+- crate a class that implements the WithSecurityContext<WithCustomUser>
+- we link annotation and factory class to create the test securityContext

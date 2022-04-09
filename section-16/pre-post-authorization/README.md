@@ -62,3 +62,8 @@
 - curl -u natalie:12345 http://localhost:8080/documents/asd555 | json_pp
 - curl -u emma:12345 http://localhost:8080/documents/asd555 | json_pp
 - curl -u emma:12345 http://localhost:8080/documents/abc123 | json_pp
+
+##### UNIT TESTING
+- Testing method security
+- no need for mock mvc since we are not testing endpoint
+- we test authorities or roles directly

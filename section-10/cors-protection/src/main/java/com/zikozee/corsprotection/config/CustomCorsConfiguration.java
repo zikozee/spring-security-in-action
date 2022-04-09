@@ -27,10 +27,12 @@ public class CustomCorsConfiguration {
     }
 
     private static List<String> permittedOrigins(){
-        return List.of("http://localhost:8080" , "example.com", "example.org");
+//        return List.of("http://localhost:8080" , "http://example.com", "http://example.org");
+        return List.of("*");
     }
 
     private static List<String> permittedMethods(){
-        return List.of("GET", "POST", "PUT", "DELETE");
+//        return List.of("GET", "POST", "PUT", "DELETE");
+        return List.of("*");
     }
 }

@@ -1,5 +1,6 @@
 # Access Endpoint
-- curl -u "john:12345" http://localhost:8080/hello
+- curl -u "john:12345" http://localhost:8080/hello    200 OK
+- curl  http://localhost:8080/hello                   401 UNAUTHORIZED
 
 - using
        .permitAll(); // to allow no authentication for all endpoints
@@ -21,3 +22,6 @@
 - The AuthenticationProvider implements the authentication logic. :-> CustomAuthenticationProvider
 - It receives the request from the AuthenticationManager and delegates finding the user to a UserDetailsSerService, 
 - and verifying the password to a PasswordEncoder.
+
+# UNIT TEST
+- **@WithMockUser**  skips authentication: assumes user is already authenticated

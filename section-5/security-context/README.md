@@ -20,3 +20,10 @@
 ### MODE_GLOBAL
 - only advisable for standalone applications
 - more so, it is not threadsafe synchronization needs be handled
+
+## UNIT TEST
+- @WithMockUser(username = "mary")  : skips authentication and configures user as mary
+- RequestProcessor:   with(requestProcessor)  e.g with(user(...)) :: ctrl user to see
+###DIFF  BTW ANNOTATION AND REQUEST_PROCESSOR
+- annotation: test security environment is setup first
+- requestprocessor: test request is created and then altered to define other constraints like test security environment

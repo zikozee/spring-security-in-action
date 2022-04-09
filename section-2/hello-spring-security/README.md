@@ -24,4 +24,6 @@
 - and verifying the password to a PasswordEncoder.
 
 # UNIT TEST
-- **@WithMockUser**  skips authentication: assumes user is already authenticated
+- **@WithMockUser**  skips authentication: assumes fake user is already authenticated
+- **@WithUserDetails** requires a bean of userdetails service in the spring context, i enforced this 
+- by defining the optional **userDetailsServiceBeanName**

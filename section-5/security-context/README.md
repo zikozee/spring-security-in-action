@@ -22,7 +22,7 @@
 - more so, it is not threadsafe synchronization needs be handled
 
 ## UNIT TEST
-- @WithMockUser(username = "mary")  : skips authentication and configures user as mary
+- @WithMockUser(username = "mary")  : skips authentication and configures fake user as mary
 - RequestProcessor:   with(requestProcessor)  e.g with(user(...)) :: ctrl user to see
 ###DIFF  BTW ANNOTATION AND REQUEST_PROCESSOR
 - annotation: test security environment is setup first

@@ -24,6 +24,7 @@
 - and verifying the password to a PasswordEncoder.
 
 ### UNIT TEST -- see also ch 05 (security context, form-based-login), ch 06(testing with mock user, repo),  ch 16, ch 10(cors-csrf-protection)
+       - ch 11(business-logic server), ch 14 (resource-server-intro)
 - **@WithMockUser**  skips authentication: assumes fake user is already authenticated
 - **@WithUserDetails** requires a bean of userdetails service in the spring context, i enforced this 
 - by defining the optional **userDetailsServiceBeanName**

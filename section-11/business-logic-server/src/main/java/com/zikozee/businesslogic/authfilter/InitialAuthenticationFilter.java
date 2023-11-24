@@ -42,10 +42,10 @@ public class InitialAuthenticationFilter extends OncePerRequestFilter {
         String code = request.getHeader("code");
 
         if(code == null){
-            Authentication auth = new UsernamePasswordAuthentication(username, password);
+            Authentication auth = new UsernamePasswordAuthentication(username, password); // authentication is false ctrl + click UsernamePasswordAuthentication  > super   (see JwtAuthenticationFilter)
             manager.authenticate(auth);
         }else{
-            Authentication auth = new OtpAuthentication(username, code);
+            Authentication auth = new OtpAuthentication(username, code);  // authentication is false ctrl + click OtpAuthentication  > super   (see JwtAuthenticationFilter)
 
             manager.authenticate(auth);
 

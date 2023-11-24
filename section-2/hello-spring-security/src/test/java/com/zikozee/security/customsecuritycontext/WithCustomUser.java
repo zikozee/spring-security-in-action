@@ -15,4 +15,5 @@ import java.lang.annotation.RetentionPolicy;
 public @interface WithCustomUser {
 
     String username(); // we can define whatever details we need to create the mock Authentication
+    String authority();
 }

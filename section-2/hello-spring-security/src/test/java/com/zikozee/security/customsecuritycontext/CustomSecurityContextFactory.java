@@ -5,6 +5,8 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.test.context.support.WithSecurityContextFactory;
 
+import java.util.List;
+
 /**
  * @author: Ezekiel Eromosei
  * @created: 09 April 2022
@@ -17,7 +19,7 @@ public class CustomSecurityContextFactory implements WithSecurityContextFactory<
         SecurityContext securityContext = SecurityContextHolder.createEmptyContext();
 
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
-                new UsernamePasswordAuthenticationToken(withCustomUser.username(), null, null);
+                new UsernamePasswordAuthenticationToken(withCustomUser.username(), null, List.of(withCustomUser::authority));
 
         securityContext.setAuthentication(usernamePasswordAuthenticationToken);
 

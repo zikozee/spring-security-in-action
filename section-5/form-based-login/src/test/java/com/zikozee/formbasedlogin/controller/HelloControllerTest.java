@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -33,6 +34,7 @@ class HelloControllerTest {
 
     @DisplayName("logging In With Wrong Authority")
     @Test
+    @WithUserDetails("mary")
     void formLoginTestWrongAuthority() throws Exception{
         mockMvc.perform(formLogin()
                         .user("mary").password("12345"))
@@ -43,6 +45,7 @@ class HelloControllerTest {
 
     @DisplayName("logging In With Correct Authority")
     @Test
+    @WithUserDetails("bill")
     void formLoginTestCorrectAuthority() throws Exception{
         mockMvc.perform(formLogin()
                         .user("bill").password("12345"))

@@ -54,7 +54,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String username = String.valueOf(claims.get("username"));
 
         GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("user");
-        var auth = new UsernamePasswordAuthenticationToken(username, null, List.of(grantedAuthority));
+        var auth = new UsernamePasswordAuthenticationToken(username, null, List.of(grantedAuthority)); // todo info this sets the authentication to be true
 
         SecurityContextHolder.getContext().setAuthentication(auth);
 

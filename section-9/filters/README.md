@@ -3,19 +3,21 @@ curl -v http://localhost:8080/hello
 # and run with Request-Id added with a non-null value
 curl -H "Request-Id:12345" http://localhost:8080/hello
 
+to do above alone comment out StaticKeyAuthenticationFilter
+
 
 # to test using add filter at, comment out the below
 correct
-curl -H "Authorization:SD9cICj1le" http://localhost:8080/hello
+curl -H "Authorization:SD9cICj1le" -H "Request-Id:12345" -v http://localhost:8080/hello
 incorrect
-curl -vH "Authorization:SD9cICj1le" http://localhost:8080/hello
+curl -H "Authorization:SD9cICj1le" -H "Request-Id:12345" -v http://localhost:8080/hello
 
 - addFilterBefore(new RequestValidationFilter(), BasicAuthenticationFilter.class)
 - addFilterAfter(new AuthLoggingFilter(), BasicAuthenticationFilter.class)
 
 ## if we need a filter called only once per REQUEST then use OncePerRequestFilter
 
-#if we want to implement logic if a filter should run or not
+# if we want to implement logic if a filter should run or not
 - use: override shouldNotFilter()  and implement logic in it to return a true or false
 - default: false ctrl + click to vet
 

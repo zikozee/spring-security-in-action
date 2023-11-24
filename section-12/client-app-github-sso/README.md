@@ -28,6 +28,8 @@
 
 - Spring provides a simpler impl for common oauth providers: **Google, github, facebook, Okta**
 - namely: **CommonOAuth2Provider**  which defaults the above implementation to last known provider value
+- org.springframework.security.config.oauth2.client.CommonOAuth2Provider
+-  check the class and compare the building with spring-microservices-in-action  >>> Oauth2Client.ProjectConfig
 
 
 ### CLIENT REPOSITORY

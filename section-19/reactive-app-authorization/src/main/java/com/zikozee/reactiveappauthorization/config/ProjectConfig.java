@@ -1,7 +1,5 @@
 package com.zikozee.reactiveappauthorization.config;
 
-import io.netty.resolver.NoopAddressResolver;
-import io.netty.util.internal.NoOpTypeParameterMatcher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

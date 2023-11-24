@@ -46,7 +46,7 @@ class HelloSpringSecurityApplicationTests {
 
     @DisplayName("using custom security context")
     @Test
-    @WithCustomUser(username = "tony") // this also skips authentication
+    @WithCustomUser(username = "tony", authority = "read") // this also skips authentication
     void helloSecurityContext() throws Exception{
         mvc.perform(get("/hello"))
                 .andExpect(content().string("Test!"))

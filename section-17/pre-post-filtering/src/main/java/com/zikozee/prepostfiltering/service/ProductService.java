@@ -17,12 +17,18 @@ import java.util.List;
 public class ProductService {
 
     @PreFilter("filterObject.owner == authentication.name")
-    public List<Product> sellProducts(List<Product> products){
+    public List<Product> sellProducts(List<Product> products){  // input must be Collection or an array
         // sell products and return the accessed(sold) products
         return products;
     }
 
-    @PostFilter("filterObject.owner == authentication.name")
+    @PreFilter("filterObject.contains('a')")   //filters out product that contains a
+    public List<Product> filterProducts(List<Product> products){
+        // sell products and return the accessed(sold) products
+        return products;
+    }
+
+    @PostFilter("filterObject.owner == authentication.name")  // return type must be Collection or an array
     public List<Product> getProducts(){
         List<Product> products = new ArrayList<>();
         products.add(new Product("beer", "nikolai"));

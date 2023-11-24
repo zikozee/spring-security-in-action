@@ -26,6 +26,11 @@ public class DocumentService {
         return documentRepository.findDocument(code);
     }
 
+    @PreAuthorize("@demoConditionEvaluator.evaluateMe(#code)")
+    public Document getDocumentPreAuthorize2(String code){
+        return documentRepository.findDocument(code);
+    }
+
     @PostAuthorize("hasPermission(returnObject, 'ROLE_manager')")
     public Document getDocumentPostAuthorize(String code){
         return documentRepository.findDocument(code);

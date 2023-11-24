@@ -26,6 +26,9 @@
 
 
 - NOTE: if required, you can use both preauthorize and postauthorize on a method
+- never use @PostAuthorize with methods that change data
+  - reason because its executes anyways: rathe use it on method that return a constant value or data 
+  - in which you just want to verify if the user has access to see
 
 
 ### COMPLEX AUTHORIZATION RULES SCENARIOS

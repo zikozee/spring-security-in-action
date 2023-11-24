@@ -24,7 +24,7 @@ public class StaticKeyAuthenticationFilter implements Filter {
         var httpRequest = (HttpServletRequest) servletRequest;
         var httpResponse = (HttpServletResponse) servletResponse;
 
-        String authentication = httpRequest.getHeader("Request-Id"); // we can use anything or maybe even Authorization
+        String authentication = httpRequest.getHeader("Authorization"); // we can use anything or maybe even Authorization
 
         if(authorizationKey.equals(authentication))
             filterChain.doFilter(httpRequest, httpResponse);
